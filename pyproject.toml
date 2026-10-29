@@ -1,16 +1,29 @@
 [project]
-name = "jupyter"
+name = "jupyter-learning-lab"
 version = "0.1.0"
-description = "Add your description here"
+description = "Curated and structured notebooks for Python, Data Analysis, Machine Learning, and Qiskit Quantum Computing."
 readme = "README.md"
 authors = [
     { name = "Shubham", email = "sshinde5930@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "ipykernel>=6.0",
+    "matplotlib>=3.8",
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "scikit-learn>=1.4",
+]
+
+[project.optional-dependencies]
+quantum = [
+    "qiskit>=1.0.0",
+    "qiskit-aer>=0.14.0",
+    "qiskit-ibm-runtime>=0.22.0",
+]
 
 [project.scripts]
-jupyter = "jupyter:main"
+jupyter-app = "jupyter:main"
 
 [build-system]
 requires = ["uv_build>=0.13.0,<0.14.0"]
